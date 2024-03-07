@@ -15,7 +15,8 @@ sap.ui.require([
 		sap.ui.getCore().setModel(oModel);
 
 
-		// Create a text UI element that displays a hardcoded text string
-		new Text({text: "Hi, My Name is Kotha Venkata Hemanth"}).placeAt("content");
+		// Display a text element whose text is derived
+		// from the model object
+		new Text({text:"{/greetingText}"}).placeAt("content");
 	});
 });
