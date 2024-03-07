@@ -17,7 +17,9 @@ sap.ui.require([
 				city: "Hyderabad",
 				zip: "500035",
 				country: "India"
-			}
+			},
+			salesAmount: 12345.6789,
+			currencyCode: "EUR"
 		});
 
 		// Assign the model object to the SAPUI5 core
