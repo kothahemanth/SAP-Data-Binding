@@ -1,0 +1,57 @@
+{ "Products": [ {
+    "ProductID": 1,
+    "ProductName": "Dairy Milk",
+    "SupplierID": 1,
+    "CategoryID": 1,
+    "QuantityPerUnit": "10 boxes x 20 bags",
+    "UnitPrice": "20.0000",
+    "UnitsInStock": 39,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 10,
+    "Discontinued": false
+   }, {
+    "ProductID": 2,
+    "ProductName": "Munch",
+    "SupplierID": 1,
+    "CategoryID": 1,
+    "QuantityPerUnit": "24 - 12 oz bottles",
+    "UnitPrice": "5.0000",
+    "UnitsInStock": 17,
+    "UnitsOnOrder": 40,
+    "ReorderLevel": 25,
+    "Discontinued": true
+   }, {
+    "ProductID": 3,
+    "ProductName": "Kinder Joy",
+    "SupplierID": 1,
+    "CategoryID": 2,
+    "QuantityPerUnit": "12 - 550 ml bottles",
+    "UnitPrice": "40.0000",
+    "UnitsInStock": 0,
+    "UnitsOnOrder": 70,
+    "ReorderLevel": 25,
+    "Discontinued": false
+   }, {
+    "ProductID": 4,
+    "ProductName": "Ferrero Rocher",
+    "SupplierID": 2,
+    "CategoryID": 2,
+    "QuantityPerUnit": "48 - 6 oz jars",
+    "UnitPrice": "80.0000",
+    "UnitsInStock": 53,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 0,
+    "Discontinued": false
+   }, {
+    "ProductID": 5,
+    "ProductName": "Galaxy",
+    "SupplierID": 2,
+    "CategoryID": 2,
+    "QuantityPerUnit": "36 boxes",
+    "UnitPrice": "25.3500",
+    "UnitsInStock": 0,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 0,
+    "Discontinued": true
+   }]
+ }

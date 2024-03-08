@@ -6,6 +6,12 @@ sap.ui.require([
 ], function (Core, JSONModel, XMLView, ResourceModel) {
 	"use strict";
 
+	// Attach an anonymous function to the SAPUI5 'init' event
+	sap.ui.getCore().attachInit(function () {
+		var oProductModel = new JSONModel();
+		oProductModel.loadData("./model/Products.json");
+		sap.ui.getCore().setModel(oProductModel, "products");
+		
 	// Chain an anonymous function to the SAPUI5 'ready' Promise
 	Core.ready().then(function () {
 		var oModel = new JSONModel({
@@ -45,4 +51,5 @@ sap.ui.require([
 				// Insert the view into the DOM
 				oView.placeAt("content");
 	});
+});
 });
