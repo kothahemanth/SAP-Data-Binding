@@ -25,7 +25,8 @@ sap.ui.require([
 				country: "India"
 			},
 			salesAmount: 12345.6789,
-			currencyCode: "EUR"
+			currencyCode: "INR",
+			priceThreshold: 20,
 		});
 
 		// Assign the model object to the SAPUI5 core
