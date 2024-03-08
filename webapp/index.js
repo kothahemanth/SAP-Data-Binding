@@ -1,19 +1,19 @@
 sap.ui.require([
 	"sap/ui/core/Core",
+	"sap/ui/core/Messaging",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/mvc/XMLView",
 	"sap/ui/model/resource/ResourceModel"
-], function (Core, JSONModel, XMLView, ResourceModel) {
+], function (Core, Messaging, JSONModel, XMLView, ResourceModel) {
 	"use strict";
 
-	// Attach an anonymous function to the SAPUI5 'init' event
-	sap.ui.getCore().attachInit(function () {
+	// Chain an anonymous function to the SAPUI5 'ready' Promise
+	Core.ready().then(function () {
+
 		var oProductModel = new JSONModel();
 		oProductModel.loadData("./model/Products.json");
 		sap.ui.getCore().setModel(oProductModel, "products");
-		
-	// Chain an anonymous function to the SAPUI5 'ready' Promise
-	Core.ready().then(function () {
+
 		var oModel = new JSONModel({
 			firstName: "Kotha",
 			lastName: "Venkata Hemanth",
@@ -40,17 +40,15 @@ sap.ui.require([
 
 		sap.ui.getCore().setModel(oResourceModel, "i18n");
 
-				// Display the XML view called "App"
-				var oView = new XMLView({
-					viewName: "sap.ui.demo.db.view.App"
-				});
-		
-				// Register the view with the message manager
-				sap.ui.getCore().getMessageManager().registerObject(oView, true);
-		
-		
-				// Insert the view into the DOM
-				oView.placeAt("content");
+		// Display the XML view called "App"
+		var oView = new XMLView({
+			viewName: "sap.ui.demo.db.view.App"
+		});
+
+		// Register the view with the message manager
+		Messaging.registerObject(oView, true);
+
+		// Insert the view into the DOM
+		oView.placeAt("content");
 	});
-});
 });

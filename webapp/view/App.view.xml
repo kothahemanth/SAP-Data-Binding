@@ -3,6 +3,7 @@
 	xmlns="sap.m"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Panel headerText="{i18n>panel1HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<form:SimpleForm editable="true" layout="ColumnLayout">
@@ -16,21 +17,22 @@
 	</Panel>
 	<Panel headerText="{i18n>panel2HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<content>
-			<l:VerticalLayout>
-				<Label labelFor="address" text="{i18n>address}:"/>
-				<FormattedText class="sapUiSmallMarginBottom"
-					htmlText="{/address/street}&lt;br>{/address/zip} {/address/city}&lt;br>{/address/country}"
-					id="address" width="200px"/>
-				<Link href="{
-						parts: [
-							'/firstName',
-							'/lastName'
-						],
-						formatter: '.formatMail'
-					}"
-					text="{i18n>sendEmail}"/>
-			</l:VerticalLayout>
-			<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<l:VerticalLayout>
+					<Label labelFor="address" text="{i18n>address}:"/>
+					<FormattedText class="sapUiSmallMarginBottom"
+						htmlText="{/address/street}&lt;br&gt;{/address/zip} {/address/city}&lt;br&gt;{/address/country}"
+						id="address" width="200px"/>
+					<Link href="{
+							parts: [
+								'/firstName',
+								'/lastName'
+							],
+							formatter: '.formatMail'
+						}"
+						text="{i18n>sendEmail}"/>
+				</l:VerticalLayout>
+				<l:VerticalLayout>
 					<Label labelFor="salesAmount" text="{i18n>salesAmount}:"/>
 					<Input description="{/currencyCode}" enabled="{/enabled}" id="salesAmount"
 						value="{
@@ -42,13 +44,16 @@
 							formatOptions: {showMeasure: false}
 						}" width="200px"/>
 				</l:VerticalLayout>
+			</l:HorizontalLayout>
 		</content>
 	</Panel>
-		<Panel headerText="{i18n>panel3HeaderText}" class="sapUiResponsiveMargin" width="auto">
+	<Panel headerText="{i18n>panel3HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<List headerText="{i18n>productListTitle}" items="{products>/Products}">
 			<items>
-				<ObjectListItem press=".onItemSelected"
-					type="Active" title="{products>ProductName}"
+				<ObjectListItem
+					press=".onItemSelected"
+					type="Active"
+					title="{products>ProductName}"
 					number="{
 						parts: [
 							{path: 'products>UnitPrice'},
@@ -75,7 +80,7 @@
 			</items>
 		</List>
 	</Panel>
-		<Panel id="productDetailsPanel" headerText="{i18n>panel4HeaderText}" class="sapUiResponsiveMargin" width="auto">
+	<Panel id="productDetailsPanel" headerText="{i18n>panel4HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<form:SimpleForm editable="true" layout="ColumnLayout">
 			<Label text="{i18n>ProductID}"/>
 			<Input value="{products>ProductID}"/>
